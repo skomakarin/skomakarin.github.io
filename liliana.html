@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+</head>
+<body>
+<h1>Ange vikt och KH/100</h1>
+ <br>
+ 
+Vikt<input type="number" id="num1" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num1.2" value="0" style="width: 5em"/> 
+Kolhydrater: <text id="svar1"></text>
+ <br>
+Vikt<input type="number" id="num2" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num2.2" value="0" style="width: 5em"/> 
+Kolhydrater: <text id="svar2"></text>
+ <br>
+Vikt<input type="number" id="num3" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num3.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar3"></text>
+ <br>
+Vikt<input type="number" id="num4" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num4.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar4"></text>
+ <br>
+Vikt<input type="number" id="num5" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num5.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar5"></text>
+ <br>
+Vikt<input type="number" id="num6" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num6.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar6"></text>
+ <br>
+Vikt<input type="number" id="num7" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num7.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar7"></text>
+
+ <br>
+Vikt<input type="number" id="num8" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num8.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar8"></text>
+ <br>
+Vikt<input type="number" id="num9" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num9.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar9"></text>
+
+ <br>
+Vikt<input type="number" id="num10" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num10.2" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="svar10"></text>
+
+<br>
+
+
+Kolhydrater totalt: <b><text id="totalt"></text></b>
+<br>
+<br>
+Portion i gram: <input type="number" id="portion" value="0"  /> 
+<br>
+<b>Kolhydrater enligt portionsstorlek: </b><b><text id="port"></text></b>
+<br>
+<button onclick="calculate()"> Räkna</button>
+
+
+<script>
+function calculate ()
+{
+ var field1=document.getElementById("num1").value;
+ var field2=document.getElementById("num1.2").value;
+ 
+ var field3=document.getElementById("num2").value;
+ var field4=document.getElementById("num2.2").value;
+ 
+ var field5=document.getElementById("num3").value;
+ var field6=document.getElementById("num3.2").value;
+  
+ var field7=document.getElementById("num4").value;
+ var field8=document.getElementById("num4.2").value;
+  
+ var field9=document.getElementById("num5").value;
+ var field10=document.getElementById("num5.2").value;
+  
+ var field11=document.getElementById("num6").value;
+ var field12=document.getElementById("num6.2").value;
+  
+ var field13=document.getElementById("num7").value;
+ var field14=document.getElementById("num7.2").value;
+  
+ var field15=document.getElementById("num8").value;
+ var field16=document.getElementById("num8.2").value;
+  
+ var field17=document.getElementById("num9").value;
+ var field18=document.getElementById("num9.2").value;
+  
+ var field19=document.getElementById("num10").value;
+ var field20=document.getElementById("num10.2").value;
+ 
+
+ var result1=parseFloat(field2)/100*parseFloat(field1);
+ var result2=parseFloat(field4)/100*parseFloat(field3);
+ var result3=parseFloat(field6)/100*parseFloat(field5);
+ var result4=parseFloat(field8)/100*parseFloat(field7);
+ var result5=parseFloat(field10)/100*parseFloat(field9);
+ var result6=parseFloat(field12)/100*parseFloat(field11);
+ var result7=parseFloat(field14)/100*parseFloat(field13);
+ var result8=parseFloat(field16)/100*parseFloat(field15);
+ var result9=parseFloat(field18)/100*parseFloat(field17);
+ var result10=parseFloat(field20)/100*parseFloat(field19);
+ var totalt=(parseFloat(result1)+parseFloat(result2)+parseFloat(result3)+parseFloat(result4)+parseFloat(result5)+parseFloat(result6)+parseFloat(result7)+parseFloat(result8)+parseFloat(result9)+parseFloat(result10));
+ 
+ var viktg=(parseFloat(field1)+parseFloat(field3)+parseFloat(field5)+parseFloat(field7)+parseFloat(field9)+parseFloat(field11)+parseFloat(field13)+parseFloat(field15)+parseFloat(field17)+parseFloat(field19));
+ 
+ var por=document.getElementById("portion").value;
+var port=(parseFloat(totalt)/parseFloat(viktg)*parseFloat(por));
+ 
+if(!isNaN(result1))
+if(!isNaN(result2))
+if(!isNaN(result3))
+if(!isNaN(result4))
+if(!isNaN(result5))
+if(!isNaN(result6))
+if(!isNaN(result7))
+if(!isNaN(result8))
+if(!isNaN(result9))
+if(!isNaN(result10))
+if(!isNaN(totalt))
+if(!isNaN(viktg))
+if(!isNaN(port))
+
+
+{
+document.getElementById("svar1").innerHTML=result1;
+document.getElementById("svar2").innerHTML=result2;
+document.getElementById("svar3").innerHTML=result3;
+document.getElementById("svar4").innerHTML=result4;
+document.getElementById("svar5").innerHTML=result5;
+document.getElementById("svar6").innerHTML=result6;
+document.getElementById("svar7").innerHTML=result7;
+document.getElementById("svar8").innerHTML=result8;
+document.getElementById("svar9").innerHTML=result9;
+document.getElementById("svar10").innerHTML=result10;
+document.getElementById("vikt").innerHTML=port;
+document.getElementById("totalt").innerHTML=totalt;
+document.getElementById("port").innerHTML=port;
+
+}
+}
+
+
+</script>
+
+<script>
+
+</script>
+</p>
+<font color=#FFFFFF>
+<text id="vikt"></text>
+</font>
+</body>
+</html>
