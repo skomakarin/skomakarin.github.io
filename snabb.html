@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+</head>
+<body>
+<h1>Ange portion och KH/100</h1>
+ <br>
+ 
+Portion: <input type="number" id="num1" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num2" value="0" style="width: 5em"/> 
+
+<br>
+<br>
+<b>Kolhydrater enligt portionsstorlek: </b><b><text id="svar1"></text></b>
+<br>
+<button onclick="calculate()"> Räkna</button>
+
+
+<script>
+function calculate ()
+{
+ var field1=document.getElementById("num1").value;
+ var field2=document.getElementById("num2").value;
+ 
+ var result1=parseFloat(field2)/100*parseFloat(field1);
+// var totalt=(parseFloat(result1)+parseFloat(result2));
+ 
+//var por=document.getElementById("portion").value;
+//var port=(parseFloat(totalt)/parseFloat(viktg)*parseFloat(por));
+ 
+if(!isNaN(result1))
+//if(!isNaN(totalt))
+//if(!isNaN(port))
+
+
+{
+document.getElementById("svar1").innerHTML=result1;
+//document.getElementById("vikt").innerHTML=port;
+//document.getElementById("totalt").innerHTML=totalt;
+//document.getElementById("port").innerHTML=port;
+
+}
+}
+
+
+</script>
+
+<script>
+
+</script>
+</p>
+<font color=#FFFFFF>
+<text id="vikt"></text>
+</font>
+</body>
+</html>
