@@ -7,14 +7,21 @@
 <body>
 <h1>Kompensations räknare</h1>
  <br>
+
+Kvarlämnat i gram: <input type="number" id="num3" value="0" style="width: 5em" /> 
+Kh/100g<input type="number" id="num4" value="0" style="width: 5em"/>  
+ <br>
+ <b>Ska kompenseras: </b><text id="svar2"></text>
+ <br>
  
-Kolhydrater: <input type="number" id="num1" value="0" style="width: 5em" /> 
+Kolhydrater: <text id="result3"></text>
 Kh/100g<input type="number" id="num2" value="0" style="width: 5em"/> 
 <br>
 <br>
 <button onclick="calculate()"> Räkna</button>
 <br>
 <br>
+
 <h2>Gram:</h2>
 <h1 id="svar1"></h1>
 <br>
@@ -24,11 +31,17 @@ Kh/100g<input type="number" id="num2" value="0" style="width: 5em"/>
 <script>
 function calculate ()
 {
- var field1=document.getElementById("num1").value;
+ //var field1=document.getElementById("num1").value;
  var field2=document.getElementById("num2").value;
+ var field3=document.getElementById("num3").value;
+ var field4=document.getElementById("num4").value;
+
  
+ var result3=parseFloat(field4)/100*parseFloat(field3)
  var result2=parseFloat(field2)/100
- var result1=parseFloat(field1)/parseFloat(result2)
+ var result1=parseFloat(result3)/parseFloat(result2)
+ result1 = result1.toFixed(2);
+ 
 // var result2=parseFloat(field2)/100*parseFloat(field1);
 // var totalt=(parseFloat(result1)+parseFloat(result2));
  
@@ -37,19 +50,33 @@ function calculate ()
  
 if(!isNaN(result1))
 if(!isNaN(result2))
+if(!isNaN(result3))
 
 //if(!isNaN(totalt))
 //if(!isNaN(port))
 
 
 {
+document.getElementById("svar2").innerHTML=result3;
 document.getElementById("svar1").innerHTML=result1;
+document.getElementById("svar3").innerHTML=result2;
+
 //document.getElementById("vikt").innerHTML=port;
 //document.getElementById("totalt").innerHTML=totalt;
 //document.getElementById("port").innerHTML=port;
 
 }
 }
+function displayMessage(){
+    let themsg = document.getElementById("svar2").value;
+    if (themsg){
+        document.getElementById("result3").innerHTML = themsg;
+    }
+    else{
+        document.getElementById("result3").innerHTML = "No message set";
+    }
+}
+
 
 
 </script>
